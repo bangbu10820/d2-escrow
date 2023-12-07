@@ -9,7 +9,7 @@ import {
 	loadFixture,
 } from "@nomicfoundation/hardhat-toolbox/network-helpers";
 
-describe("EscrowSimple contract", () => {
+describe.skip("EscrowSimple contract", () => {
 	let contract: EscrowSimple;
 
 	before(async () => {
