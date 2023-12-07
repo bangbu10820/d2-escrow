@@ -10,7 +10,6 @@ contract EscrowErc20 {
     address public borrower;
     uint public loan;
     IERC20 public token;
-    bool public claimed;
     uint public steps;
     uint public claimedSteps;
     uint public lockedAt;
@@ -27,7 +26,6 @@ contract EscrowErc20 {
         borrower = _borrower;
         loan = _loan;
         token = _token;
-        claimed = false;
         steps = _steps;
         claimedSteps = 0;
         lockedAt = block.timestamp;
@@ -57,11 +55,5 @@ contract EscrowErc20 {
         claimedAmount += releaseAmount;
 
         token.transfer(msg.sender, releaseAmount);
-    }
-
-    function calculateDayDiff() external view returns (uint) {
-        uint dayDiff = (block.timestamp - lockedAt) / 1 weeks;
-
-        return dayDiff;
     }
 }

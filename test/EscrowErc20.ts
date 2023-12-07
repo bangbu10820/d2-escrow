@@ -173,10 +173,4 @@ describe("EscrowErc20 contract", () => {
 			);
 		});
 	});
-
-	// it("Withdraw", async () => {
-	// 	await contract.connect(borrower).withdraw();
-	// 	expect(await contract.claimed()).to.eq(true);
-	// 	expect(await token.balanceOf(borrower.address)).to.eq(parseEther("1"));
-	// });
 });
